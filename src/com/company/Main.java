@@ -42,7 +42,7 @@ public class Main {
             getBullsAndCows(computerOneNumber, playerNumberArray);
 
             printResult(playerNumber);
-            checkForWinner();
+            checkForWinner(playerNumber);
         }
     }
 
@@ -72,20 +72,20 @@ public class Main {
             getBullsAndCows(turnNumber, playerNumberArray);
 
             printResult(turn, playerNumber);
-            checkForWinner(turn);
+            checkForWinnerMultiPlayer(turn);
             turn = turn==1?2:1;
 
         }
     }
 
-    static void checkForWinner(){
-        if (bulls == 4) {
+    static void checkForWinner(int playerNumber){
+        if (bulls == 4 || playerNumber == 0) {
             System.out.println("Печелите!!!");
             System.exit(0);
         }
     }
 
-    static void checkForWinner(int turn){
+    static void checkForWinnerMultiPlayer(int turn){
         if (bulls == 4) {
             System.out.println("Играч " + turn + " печели!!!");
             System.exit(0);
